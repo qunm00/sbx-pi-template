@@ -10,7 +10,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash - \
 
 # Install pi as the non-root user the shell-docker base runs as
 USER agent
-RUN npm install -g @mariozechner/pi-coding-agent
+RUN npm install -g --ignore-scripts @earendil-works/pi-coding-agent@latest
 
 WORKDIR /workspace
 # CMD ["pi"]
