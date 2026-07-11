@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-IMAGE_NAME="${IMAGE_NAME:-qunm00/sbx-pi-template}"
+IMAGE_NAME="${IMAGE_NAME:-nmiquan/sbx-pi-template}"
 TAG="${TAG:-$(date +%Y-%m-%d)}"
 FULL_IMAGE="${IMAGE_NAME}:${TAG}"
 LATEST_IMAGE="${IMAGE_NAME}:latest"

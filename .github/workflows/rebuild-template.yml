@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
 
 env:
-  IMAGE_NAME: qunm00/sbx-pi-template
+  IMAGE_NAME: nmiquan/sbx-pi-template
 
 jobs:
   rebuild:
