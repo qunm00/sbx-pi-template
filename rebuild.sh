@@ -1,10 +1,21 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-IMAGE_NAME="${IMAGE_NAME:-ghcr.io/qunm/sbx-pi-template}"
+IMAGE_NAME="${IMAGE_NAME:-ghcr.io/qunm00/sbx-pi-template}"
 TAG="${TAG:-$(date +%Y-%m-%d)}"
 FULL_IMAGE="${IMAGE_NAME}:${TAG}"
 LATEST_IMAGE="${IMAGE_NAME}:latest"
+
+# Check if logged into Docker Hub (required for docker scout)
+if ! docker scout config | grep -q "dockerhub"; then
+  echo "==> Authenticating with Docker Hub for scout"
+  if [ -z "${DOCKERHUB_USERNAME:-}" ] || [ -z "${DOCKERHUB_TOKEN:-}" ]; then
+    echo "Error: DOCKERHUB_USERNAME and DOCKERHUB_TOKEN env vars not set"
+    echo "Set them or run: docker login"
+    exit 1
+  fi
+  echo "${DOCKERHUB_TOKEN}" | docker login -u "${DOCKERHUB_USERNAME}" --password-stdin
+fi
 
 echo "==> Building ${FULL_IMAGE}"
 docker build -t "${FULL_IMAGE}" -t "${LATEST_IMAGE}" .
