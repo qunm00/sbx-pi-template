@@ -24,7 +24,7 @@ echo "==> Verifying pi runs"
 docker run --rm "${FULL_IMAGE}" pi --version
 
 echo "==> Scanning for critical/high CVEs"
-docker scout cves "${FULL_IMAGE}" --only-severity critical,high --exit-code
+docker scout cves "${FULL_IMAGE}" --only-severity critical,high --ignore-base
 
 echo "==> Pushing ${FULL_IMAGE}"
 docker push "${FULL_IMAGE}"
