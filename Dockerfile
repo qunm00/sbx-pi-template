@@ -1,5 +1,7 @@
 FROM docker/sandbox-templates:shell-docker
 
+USER root
+
 # Install Node 24 (Active LTS, supported through April 2028)
 RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash - \
     && apt-get install -y nodejs \
