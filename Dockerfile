@@ -16,4 +16,4 @@ RUN mkdir -p "$HOME/.npm-global" \
 ENV PATH="/home/agent/.npm-global/bin:${PATH}"
 
 WORKDIR /workspace
-# CMD ["pi"]
+CMD ["pi"]
