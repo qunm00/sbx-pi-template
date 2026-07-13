@@ -15,6 +15,7 @@ Built on Docker's own `docker/sandbox-templates:shell-docker` base.
 ```bash
 docker build -t sbx-pi-template:local .
 docker run --rm sbx-pi-template:local pi --version
+docker run --rm -it sbx-pi-template:local
 ```
 
 ## Rebuild, scan, and push
