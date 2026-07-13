@@ -16,4 +16,3 @@ RUN mkdir -p "$HOME/.npm-global" \
 ENV PATH="/home/agent/.npm-global/bin:${PATH}"
 
 WORKDIR /workspace
-RUN printf '\nif [[ $- == *i* ]] && command -v pi &> /dev/null; then exec pi; fi\n' >> ~/.bashrc
