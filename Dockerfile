@@ -15,5 +15,9 @@ RUN mkdir -p "$HOME/.npm-global" \
     && npm install -g --ignore-scripts @earendil-works/pi-coding-agent@latest
 ENV PATH="/home/agent/.npm-global/bin:${PATH}"
 
+# Install pi extensions (git-based)
+RUN mkdir -p "$HOME/.pi/agent" \
+    && pi install git:github.com/qunm00/pi-continual-learning
+
 WORKDIR /workspace
 RUN printf '\nif [[ $- == *i* ]] && command -v pi &> /dev/null; then exec pi; fi\n' >> ~/.bashrc

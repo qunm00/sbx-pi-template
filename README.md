@@ -9,6 +9,7 @@ Built on Docker's own `docker/sandbox-templates:shell-docker` base.
 - Docker's official `shell-docker` sandbox base
 - Node.js 24 (Active LTS, supported through April 2028)
 - [`pi`](https://www.npmjs.com/package/@mariozechner/pi-coding-agent) installed globally via npm
+- [`pi-continual-learning`](https://github.com/qunm00/pi-continual-learning) extension installed globally
 
 ## Build locally
 
