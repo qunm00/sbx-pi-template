@@ -12,7 +12,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash - \
 USER agent
 RUN mkdir -p "$HOME/.npm-global" \
     && npm config set prefix "$HOME/.npm-global" \
-    && npm install -g --ignore-scripts @earendil-works/pi-coding-agent@latest
+    && npm install -g --ignore-scripts @earendil-works/pi-coding-agent
 ENV PATH="/home/agent/.npm-global/bin:${PATH}"
 
 # Install pi extensions (git-based)
