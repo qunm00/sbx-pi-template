@@ -19,7 +19,10 @@ ENV PATH="/home/agent/.npm-global/bin:${PATH}"
 RUN mkdir -p "$HOME/.pi/agent" \
     && pi install git:github.com/qunm00/pi-continual-learning \
     && pi install npm:@upstash/context7-pi \
-    && pi install git:github.com/qunm00/pi-skills
+    && pi install git:github.com/qunm00/pi-skills \
+    && pi install npm:@tintinweb/pi-subagents \
+    && pi update \
+    && pi update --extensions
 
 WORKDIR /workspace
 RUN printf '\nif [[ $- == *i* ]] && command -v pi &> /dev/null fi\n' >> ~/.bashrc
