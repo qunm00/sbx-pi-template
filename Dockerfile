@@ -22,4 +22,4 @@ RUN mkdir -p "$HOME/.pi/agent" \
     && pi install git:github.com/qunm00/pi-skills
 
 WORKDIR /workspace
-RUN printf '\nif [[ $- == *i* ]] && command -v pi &> /dev/null; then exec pi; fi\n' >> ~/.bashrc
+RUN printf '\nif [[ $- == *i* ]] && command -v pi &> /dev/null fi\n' >> ~/.bashrc
