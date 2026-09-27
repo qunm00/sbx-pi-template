@@ -1,4 +1,8 @@
-FROM docker/sandbox-templates:shell
+# Multi-arch: the index is published for linux/amd64 and linux/arm64 so the
+# image runs on sandbox hosts of either arch (sandboxes have no CPU emulation).
+# $TARGETPLATFORM keeps each leg on its native base manifest.
+ARG TARGETPLATFORM
+FROM --platform=${TARGETPLATFORM} docker/sandbox-templates:shell
 
 USER root
 
