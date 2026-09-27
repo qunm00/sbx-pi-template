@@ -1,6 +1,14 @@
 name: Rebuild and rescan pi template
 
-# not sure why local build works, but github action build fails locally
+# The one recorded failure (2026-07-11, f98a1a8) was not a flaky image build.
+# Root cause: IMAGE_NAME was hardcoded to qunm00/ (the GitHub handle) in both
+# this file and rebuild.sh, so pushes targeted a Docker Hub namespace that
+# doesn't exist. Fixed in 1560c00, which set it to nmiquan/ (the Docker Hub
+# handle) and passed 8 minutes later. The 19 runs since have all passed,
+# including 5f4e47a, which changed the Dockerfile and built in CI.
+# These triggers were disabled later in ae9499a on the hunch that the build
+# was broken locally-but-fine-in-CI; it wasn't. Keep IMAGE_NAME in sync
+# across this file and rebuild.sh -- that mismatch is what broke it before.
 on:
   # schedule:
   #   - cron: "0 0 * * 1"
@@ -10,9 +18,9 @@ on:
       - main
     paths:
       - 'README.md'
-      # - 'Dockerfile'
-      # - 'rebuild.sh'
-      # - '.github/workflows/rebuild-template.yml'
+      - 'Dockerfile'
+      - 'rebuild.sh'
+      - '.github/workflows/rebuild-template.yml'
 
 env:
   IMAGE_NAME: nmiquan/sbx-pi-template
