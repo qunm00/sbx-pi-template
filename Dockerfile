@@ -2,7 +2,7 @@
 # image runs on sandbox hosts of either arch (sandboxes have no CPU emulation).
 # $TARGETPLATFORM keeps each leg on its native base manifest.
 ARG TARGETPLATFORM
-FROM --platform=${TARGETPLATFORM} docker/sandbox-templates:shell
+FROM docker/sandbox-templates:shell
 
 USER root
 
@@ -30,4 +30,3 @@ RUN mkdir -p "$HOME/.pi/agent" \
     && pi update --extensions
 
 WORKDIR /workspace
-RUN printf '\nif [[ $- == *i* ]] && command -v pi &> /dev/null fi\n' >> ~/.bashrc
