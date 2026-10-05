@@ -26,6 +26,7 @@ RUN mkdir -p "$HOME/.pi/agent" \
     && pi install git:github.com/qunm00/pi-skills \
     && pi install npm:@tintinweb/pi-subagents \
     && pi install npm:pi-ask-user-questions \
+    && pi install git:github.com/obra/superpowers \
     && pi update \
     && pi update --extensions
 
