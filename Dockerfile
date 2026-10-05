@@ -2,7 +2,7 @@
 # image runs on sandbox hosts of either arch (sandboxes have no CPU emulation).
 # $TARGETPLATFORM keeps each leg on its native base manifest.
 ARG TARGETPLATFORM
-FROM docker/sandbox-templates:shell
+FROM docker/sandbox-templates:shell-docker
 
 USER root
 
