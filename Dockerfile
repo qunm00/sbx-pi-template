@@ -27,7 +27,8 @@ RUN mkdir -p "$HOME/.pi/agent" \
     && pi install npm:@tintinweb/pi-subagents \
     && pi install npm:pi-ask-user-questions \
     && pi install git:github.com/obra/superpowers \
-    && npx skills add AminBlg/SimpleEnglish -g -a pi -y \
+    && pi install git:github.com/AminBlg/SimpleEnglish \
+    && pi install https://github.com/umputun/revdiff \
     && pi update \
     && pi update --extensions
 
