@@ -14,17 +14,39 @@ Built on Docker's own `docker/sandbox-templates:shell-docker` base.
 - [`pi-subagents`](https://github.com/tintinweb/pi-subagents) extension installed globally
 - [`pi-skills`](https://github.com/qunm00/pi-skills) extension installed globally
 - [`pi-ask-user-questions`](https://github.com/qunm00/pi-ask-user-questions) extension installed globally
+- [revdiff](https://github.com/umputun/revdiff): pi extension plus the pinned, checksum-verified `revdiff` binary for the image's architecture
 
 ## Build locally
 
 ```bash
 docker build -t sbx-pi-template:local .
 docker run --rm sbx-pi-template:local pi --version
+docker run --rm sbx-pi-template:local revdiff --version
 docker run --rm -it sbx-pi-template:local
 ```
 
 `docker build` produces a single-arch image matching your host, which is all you
 need locally. `./rebuild.sh` is what publishes the multi-arch tags.
+
+## Using revdiff
+
+Inside the sandbox, `/revdiff` (or the `revdiff_review` tool) opens an
+interactive diff review and hands the captured annotations back to pi.
+
+```text
+/revdiff                 # detect uncommitted, staged, or branch changes
+/revdiff main            # review this branch against main
+/revdiff HEAD~1         # review the last commit
+/revdiff --only README.md
+/revdiff last tag
+```
+
+revdiff reads the terminal directly, so the sandbox session must be interactive
+(`docker run -it`, or a `sbx` session with a TTY). A non-TTY run has no terminal
+for the review UI.
+
+The release version is pinned by the `REVDIFF_VERSION` build argument in the
+Dockerfile. Bump it and rebuild to upgrade.
 
 ## Platforms
 

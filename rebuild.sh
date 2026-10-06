@@ -44,6 +44,9 @@ docker buildx build --load -t "${FULL_IMAGE}" .
 echo "==> Verifying pi runs"
 docker run --rm "${FULL_IMAGE}" pi --version
 
+echo "==> Verifying revdiff runs"
+docker run --rm "${FULL_IMAGE}" revdiff --version
+
 echo "==> Scanning for critical/high CVEs"
 docker scout cves "${FULL_IMAGE}" --only-severity critical,high --ignore-base
 
