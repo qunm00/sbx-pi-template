@@ -14,7 +14,6 @@ Built on Docker's own `docker/sandbox-templates:shell-docker` base.
 - [`pi-subagents`](https://github.com/tintinweb/pi-subagents) extension installed globally
 - [`pi-skills`](https://github.com/qunm00/pi-skills) extension installed globally
 - [`pi-ask-user-questions`](https://github.com/qunm00/pi-ask-user-questions) extension installed globally
-- [revdiff](https://github.com/umputun/revdiff): pi extension plus the pinned, checksum-verified `revdiff` binary for the image's architecture
 
 ## Build locally
 
