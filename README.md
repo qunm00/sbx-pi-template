@@ -9,11 +9,15 @@ Built on Docker's own `docker/sandbox-templates:shell-docker` base.
 - Docker's official `shell-docker` sandbox base
 - Node.js 24 (Active LTS, supported through April 2028)
 - [`pi`](https://github.com/earendil-works/pi) installed globally via npm
-- [context7](https://github.com/upstash/context7/tree/master/packages/pi) extension installed globally
+- [`context7`](https://github.com/upstash/context7/tree/master/packages/pi) extension installed globally
 - [`pi-continual-learning`](https://github.com/qunm00/pi-continual-learning) extension installed globally
 - [`pi-subagents`](https://github.com/tintinweb/pi-subagents) extension installed globally
 - [`pi-skills`](https://github.com/qunm00/pi-skills) extension installed globally
 - [`pi-ask-user-questions`](https://github.com/qunm00/pi-ask-user-questions) extension installed globally
+
+## To be included
+
+- [`impeccable`](https://impeccable.style)
 
 ## Build locally
 
