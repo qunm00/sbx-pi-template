@@ -17,7 +17,8 @@ Built on Docker's own `docker/sandbox-templates:shell-docker` base.
 
 ## To be included
 
-- [`impeccable`](https://impeccable.style)
+- [`impeccable`](https://github.com/pbakaus/impeccable)
+- [`ponytails`](https://github.com/dietrichgebert/ponytail)
 
 ## Build locally
 
